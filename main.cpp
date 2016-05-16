@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
 //        calc(cMsg, size, code);
 //        toHexString(code, hex);
 //        cntZero=count0(hex,endLoop+1);
-		convert2 << FNVHash(newMsg);
+		convert2 << (FNVHash(newMsg)/*%1000000000 */);
 		strHash = convert2.str();
 		cntDigits = strHash.length();
 		cntZero = 10 - cntDigits;	// 10 is the maxlen of unsigned 32 bit int
@@ -108,6 +108,20 @@ int count0(char str[],int n){
 }
 
 /* OUTPUT
+The initial random number = 32230
+The base message = What a difference a day makes!
+The total time take = 16 (secs)
+The number of zeroes = 6
+The last hash was 5038
+0 zeroes occured 364098 times
+1 zeroes occured 99426 times
+2 zeroes occured 9783 times
+3 zeroes occured 999 times
+4 zeroes occured 92 times
+5 zeroes occured 7 times
+6 zeroes occured 1 times
+Press any key to continue . . .
+
 The initial random number = 10235
 The base message = What a difference a day makes!
 The total time take = 184 (secs)
@@ -121,5 +135,21 @@ The last hash was 753
 5 zeroes occured 122 times
 6 zeroes occured 7 times
 7 zeroes occured 1 times
+Press any key to continue . . .
+
+The initial random number = 16971
+The base message = What a difference a day makes!
+The total time take = 598 (secs)
+The number of zeroes = 8
+The last hash was 81
+0 zeroes occured 13494327 times
+1 zeroes occured 3687585 times
+2 zeroes occured 368715 times
+3 zeroes occured 37151 times
+4 zeroes occured 3745 times
+5 zeroes occured 388 times
+6 zeroes occured 34 times
+7 zeroes occured 5 times
+8 zeroes occured 1 times
 Press any key to continue . . .
 */
